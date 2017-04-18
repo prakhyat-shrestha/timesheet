@@ -1,0 +1,83 @@
+<!--
+  Generated template for the UnitType page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ <ion-navbar color="primary">
+
+<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+   <ion-title > Timesheet Management</ion-title>
+
+ </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h4>Unit Type List</h4>
+
+        <ion-row>
+          <ion-col width-20>
+            <ion-list>
+              <button ion-button color="primary" (click)="createUnitType()">UNIT&nbsp; <ion-icon name="md-add-circle"></ion-icon></button>
+            </ion-list>
+          </ion-col>
+         </ion-row>
+
+        <ion-row>
+          <ion-col width-15>
+           ID
+          </ion-col>
+          <ion-col width-50>
+            Type Name
+          </ion-col>
+          <ion-col width-35>
+            Action
+          </ion-col>        
+
+        </ion-row>
+        
+        <ion-row *ngFor="let unitType of unitTypes">
+          <ion-col width-15> 
+      {{$index+1}}
+          </ion-col>
+          <ion-col width-50>
+          {{unitType.value}}
+          </ion-col>
+          
+          <ion-col width-35>
+            
+              <!-- <a href=""><ion-icon name="create" (click)="updateProject(project)"></ion-icon></a> -->
+            <button ion-button small icon-only color="light" (click)="updateUnitType(unitType)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+                  
+             <!-- <a href=""><ion-icon name="settings"></ion-icon></a>  -->
+           
+            <button ion-button small icon-only color="light" (click)="deleteProject(project)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+              <!-- <a href=""><ion-icon name="trash"></ion-icon></a> -->
+            
+          </ion-col>
+
+        </ion-row>
+
+        <!---->
+
+
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
